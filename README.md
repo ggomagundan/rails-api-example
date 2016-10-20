@@ -1,22 +1,14 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-a# rails-api-example
+# rails-api-example
 
 Rails Project using Rails-API
+
+## Prepare
+ Install `mysql2` gem (if you not use mysql change `Gemfile` and excute
+`bundle` command)
+
+    $ rails db:seed
+
+
 
 ## Serializing API Output
 
