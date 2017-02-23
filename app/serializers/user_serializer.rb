@@ -4,6 +4,7 @@ class UserSerializer < ActiveModel::Serializer
   def gender_str
     return "male" if object.gender == 1
     return "female" if object.gender == 2
-
   end
+
+  has_many :posts,  serializer: PostSerializer
 end

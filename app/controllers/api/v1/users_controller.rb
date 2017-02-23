@@ -2,11 +2,12 @@ module Api::V1
   class UsersController < ApiController
     before_action :set_user, only: [:show, :update, :destroy]
 
+    after_action only: [:index] { set_pagination_headers :users }
+
     # GET /users
     def index
 
-      @users = User.page(1).per(20)
-      @users = User.page(params[:page][:number]).per(params[:page][:size]) if params[:page].present?
+      @users = User.page(page).per(per_page)
 
       render json: @users, each_serializer: V1UserSerializer
     end
