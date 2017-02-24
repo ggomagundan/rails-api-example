@@ -6,5 +6,6 @@ class UserSerializer < ActiveModel::Serializer
     return "female" if object.gender == 2
   end
 
+
   has_many :posts,  serializer: PostSerializer
 end

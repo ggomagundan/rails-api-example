@@ -3,11 +3,11 @@ class ApplicationController < ActionController::API
 
   private
   def page
-    @page ||= params[:page][:number] || 1
+    @page ||= params[:page].try("[:number]") || 1
   end 
 
   def per_page
-    @per_page ||= params[:page][:size] || 10
+    @per_page ||= params[:page].try("[:size]") || 10
   end 
 
   def set_pagination_headers(v_name)
