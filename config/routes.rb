@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 #  constraints subdomain: 'api' do
     scope module: 'api' do
       namespace :v1 do
-        resources :users
+        resources :users 
       end
       namespace :v2 do
-        resources :users
+        resources :users do
+          resources :posts
+        end
       end
 
     end

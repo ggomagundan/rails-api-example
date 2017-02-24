@@ -8,7 +8,7 @@ module Api::V2
 
       @users = User.page(page).per(per_page)
 
-      render json: @users
+      render json: @users, include: "**"
     end
 
     # GET /users/1

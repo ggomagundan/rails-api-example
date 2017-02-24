@@ -7,5 +7,5 @@ class UserSerializer < ActiveModel::Serializer
   end
 
 
-  has_many :posts,  serializer: PostSerializer
+  #has_many :posts, embed: :user_id,  serializer: PostSerializer
 end
